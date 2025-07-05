@@ -35,6 +35,7 @@ export default function TransactionList({ fetchTransactionsTrigger, onEdit }) {
             <th className="p-3 border border-border font-medium">Date</th>
             <th className="p-3 border border-border font-medium">Description</th>
             <th className="p-3 border border-border font-medium">Amount (₹)</th>
+            <th className="p-3 border border-border font-medium">Category</th>
             <th className="p-3 border border-border font-medium">Actions</th>
           </tr>
         </thead>
@@ -46,6 +47,7 @@ export default function TransactionList({ fetchTransactionsTrigger, onEdit }) {
               </td>
               <td className="p-3 border border-border">{tx.description}</td>
               <td className="p-3 border border-border">₹{tx.amount}</td>
+              <td className="p-3 border border-border">{tx.category}</td>
               <td className="p-3 border border-border space-x-2">
                 <Button
                   size="sm"

@@ -3,6 +3,7 @@ import { useState } from "react";
 import TransactionForm from "../components/TransactionForm";
 import TransactionList from "../components/TransactionList";
 import ExpenseChart from "../components/ExpenseChart";
+import CategoryPieChart from "../components/CategoryPieChart";
 export default function HomePage(){
   const [editData, setEditData] = useState(null);
   const [refreshKey, setRefreshkey] = useState(0);
@@ -26,6 +27,8 @@ export default function HomePage(){
     />
 
     <ExpenseChart trigger={refreshKey} />
+    <CategoryPieChart trigger={refreshKey} />
+    
   </div>
 </main>
 

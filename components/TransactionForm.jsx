@@ -4,9 +4,11 @@ import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 
 export default function TransactionForm({ fetchTransactions, editData, clearEdit }) {
+  const CATEGORIES = ['Food', 'Transport', 'Rent', 'Entertainment', 'Utilities', 'Others'];
   const [amount, setAmount] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
+  const [category, setCategory] = useState('');
   const [editingId, setEditingId] = useState(null);
 
   useEffect(() => {
@@ -14,6 +16,7 @@ export default function TransactionForm({ fetchTransactions, editData, clearEdit
       setAmount(editData.amount);
       setDescription(editData.description);
       setDate(editData.date.split('T')[0]);
+      setCategory(editData.category)
       setEditingId(editData._id);
     }
   }, [editData]);
@@ -26,7 +29,7 @@ export default function TransactionForm({ fetchTransactions, editData, clearEdit
       return;
     }
 
-    const newData = { amount: Number(amount), description, date };
+    const newData = { amount: Number(amount), description, date,category };
 
     const res = editingId
       ? await fetch('/api/transactions', {
@@ -41,6 +44,7 @@ export default function TransactionForm({ fetchTransactions, editData, clearEdit
     if (res.ok) {
       setAmount('');
       setDescription('');
+      setCategory('');
       setDate('');
       setEditingId(null);
       fetchTransactions();
@@ -65,6 +69,17 @@ export default function TransactionForm({ fetchTransactions, editData, clearEdit
           onChange={(e) => setDescription(e.target.value)}
           className="flex-1"
         />
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border rounded px-2 py-1"
+          required
+        >
+          <option value="">Select category</option>
+          {CATEGORIES.map((cat) => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
+        </select>
         <Input
           type="date"
           value={date}
