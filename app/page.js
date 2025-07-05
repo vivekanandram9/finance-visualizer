@@ -64,7 +64,7 @@ export default function HomePage() {
 
         {/* Budget vs Actual Chart */}
         <section>
-          <BudgetVsTransaction />
+          <BudgetVsTransaction trigger={refreshKey}/>
         </section>
 
         {/* Insights */}

@@ -8,7 +8,7 @@ import { Input } from './ui/input';
 
 const CATEGORIES = ['Food', 'Transport', 'Rent', 'Entertainment', 'Utilities', 'Others'];
 
-export default function BudgetVsActualChart() {
+export default function BudgetVsActualChart({ trigger }) {
   const [selectedMonth, setSelectedMonth] = useState(() => {
     const now = new Date();
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
@@ -57,12 +57,12 @@ export default function BudgetVsActualChart() {
     };
 
     fetchData();
-  }, [selectedMonth]);
+  }, [selectedMonth, trigger]); // <- Include trigger here
 
   return (
     <Card className="p-6 mt-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold"> Budget vs Actual Comparison</h2>
+        <h2 className="text-lg font-semibold">Budget vs Actual Comparison</h2>
         <Input
           type="month"
           value={selectedMonth}
