@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '../components/ui/button';
 
 export default function TransactionList({ fetchTransactionsTrigger, onEdit }) {
   const [transactions, setTransactions] = useState([]);

@@ -1,8 +1,8 @@
 'use client';
 import { useState } from "react";
-import TransactionForm from "@/components/TransactionForm";
-import TransactionList from "@/components/TransactionList";
-import ExpenseChart from "@/components/ExpenseChart";
+import TransactionForm from "../components/TransactionForm";
+import TransactionList from "../components/TransactionList";
+import ExpenseChart from "../components/ExpenseChart";
 export default function HomePage(){
   const [editData, setEditData] = useState(null);
   const [refreshKey, setRefreshkey] = useState(0);
