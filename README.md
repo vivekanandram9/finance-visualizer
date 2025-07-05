@@ -16,5 +16,5 @@ A simple finance tracker to add, edit, delete, and visualize expenses.
 - shadcn/ui
 
 ## Run Locally
-- npm install
-- npm run dev
+-npm install
+-npm run dev
