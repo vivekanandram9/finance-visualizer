@@ -5,9 +5,9 @@ import TransactionList from "../components/TransactionList";
 import ExpenseChart from "../components/ExpenseChart";
 import CategoryPieChart from "../components/CategoryPieChart";
 import DashboardSummary from "../components/DashboardSummary";
-import BudgetVsTransaction from "@/components/BudgetVsTransactionChart";
-import BudgetForm from "@/components/BudgetForm";
-import SpendingInsights from "@/components/SpendingInsights";
+import BudgetVsTransaction from "../components/BudgetVsTransactionChart";
+import BudgetForm from "../components/BudgetForm";
+import SpendingInsights from "../components/SpendingInsights";
 import { Card } from "../components/ui/card";
 
 export default function HomePage() {
